@@ -16,6 +16,9 @@ group :test do
 	gem 'capybara', '2.1.0'
 end
 
+# Use bcrypt for secure password hash encrpytion
+gem 'bcrypt-ruby', '3.1.2'
+
 # Use bootstrap for CSS styling
 gem 'bootstrap-sass', '2.3.2.0'
 
