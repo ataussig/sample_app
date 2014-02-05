@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
-  get "users/new"
+  # Enable all RESTful resources and actions: http://ruby.railstutorial.org/chapters/sign-up#table-RESTful_users
+  resources :users
   
   root 'static_pages#home'
   match '/signup',    to: 'users#new',               via: 'get'
