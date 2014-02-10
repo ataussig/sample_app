@@ -25,6 +25,13 @@ gem 'bcrypt-ruby', '3.1.2'
 # Use bootstrap for CSS styling
 gem 'bootstrap-sass', '2.3.2.0'
 
+# Use faker to make sample users
+gem 'faker', '1.1.2'
+
+# Use will_paginate and bootstrap-will_paginate for user pagniation.
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'
 
