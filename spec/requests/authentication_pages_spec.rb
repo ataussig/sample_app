@@ -15,6 +15,8 @@ describe "Authentication" do
 			before { click_button "Sign in" }
 
 			it { should have_title('Sign in') }
+			it { should_not have_title('Profile') }
+			it { should_not have_title('Settings') }
 			it { should have_selector('div.alert.alert-error') }
 
 			describe "after visiting another page" do
@@ -110,6 +112,15 @@ describe "Authentication" do
 			describe "submitting a DELETE request to the Users#destroy action" do
 				before { delete user_path(user) }
 				specify { expect(response).to redirect_to(root_url) }
+			end
+		end
+
+		describe "as an admin user" do
+			let(:admin) { FactoryGirl.create(:admin) }
+			before { sign_in admin }
+
+			it "can't delete self by submitting DELETE request to Users#destroy action" do
+				expect { delete user_path(admin) }.to_not change(User, :count).by(-1)
 			end
 		end
 	end
