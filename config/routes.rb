@@ -2,6 +2,7 @@ SampleApp::Application.routes.draw do
   # Enable all RESTful resources and actions: http://ruby.railstutorial.org/chapters/sign-up#table-RESTful_users
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy]
   
   root 'static_pages#home'
   match '/signup',    to: 'users#new',               via: 'get'
